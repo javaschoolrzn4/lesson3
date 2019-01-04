@@ -1,5 +1,7 @@
 package ru.rzn.sbt.javaschool.lesson3.flowers;
 
+import java.lang.reflect.Array;
+
 public class Solution {
     /**
      * Цветы
@@ -16,7 +18,7 @@ public class Solution {
      * England, WestBengal, Hungary (именно в таком порядке)
      */
     public static Region[] regions() {
-        return null;
+        return new Region[] {new England(), new WestBengal(), new Hungary()};
     }
 
 }

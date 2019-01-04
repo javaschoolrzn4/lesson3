@@ -1,5 +1,7 @@
 package ru.rzn.sbt.javaschool.lesson3.army;
 
+import java.util.Objects;
+
 /**
  * Воин
  */
@@ -33,5 +35,23 @@ final public class Warrior {
 
     public int getStrength() {
         return strength;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (!Warrior.class.isAssignableFrom(obj.getClass())) {
+            return false;
+        }
+        final Warrior other = (Warrior) obj;
+        if (!Objects.equals(this.weapon, other.weapon)) {
+            return false;
+        }
+        if (this.strength != other.strength) {
+            return false;
+        }
+        return true;
     }
 }

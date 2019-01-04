@@ -26,6 +26,9 @@ public class Solution {
      * 12. В методе logDeck класса Solution реализуйте создание объекта класса DeckImpl и верните его.
      */
     public static Deck getDeck() {
-        return null;
+        return new DeckImpl();
+    }
+    public DeckImpl logDeck() {
+        return new DeckImpl();
     }
 }
