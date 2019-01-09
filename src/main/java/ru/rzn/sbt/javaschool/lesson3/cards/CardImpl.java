@@ -11,17 +11,49 @@ public class CardImpl implements Card {
 
     @Override
     public String toString() {
-        return Rank.values()[rank].name() + " " + Suite.values()[suit].name();
+        return Rank.values()[rank].getRankName() + " " + Suite.values()[suit].getSuitName();
     }
 
     enum Rank {
-        туз, шестёрка, семёрка, восьмёрка, девятка, десятка, валет, дама, король
+        ACE(0, "туз"),
+        SIX(1, "шестёрка"),
+        SEVEN(2, "семёрка"),
+        EIGHT(3, "восьмёрка"),
+        NINE(4, "девятка"),
+        TEN(5, "десятка"),
+        JACK(6, "валет"),
+        QUEEN(7, "дама"),
+        KING(8, "король");
+
+        private int rankId;
+        private String rankName;
+
+        Rank(int rankId, String rankName) {
+            this.rankId = rankId;
+            this.rankName = rankName;
+        }
+
+        public String getRankName() {
+            return rankName;
+        }
     }
 
     enum Suite {
-        бубны,
-        трефы,
-        червы,
-        пики
+        DIAMONDS(0, "бубны"),
+        CLUBS(1, "трефы"),
+        HEARTS(2, "червы"),
+        SPADES(3, "пики");
+
+        private int suitID;
+        private String suitName;
+
+        Suite(int suitID, String suitName) {
+            this.suitID = suitID;
+            this.suitName = suitName;
+        }
+
+        public String getSuitName() {
+            return this.suitName;
+        }
     }
 }
